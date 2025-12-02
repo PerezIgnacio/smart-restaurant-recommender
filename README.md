@@ -14,4 +14,4 @@ A small demo project showcasing the use of RAG (Retrieval-Augmented Generation) 
 3. Install dependencies with `pip install -r requirements.txt`.
 4. Download the JSON dataset from [Yelp Open Dataset](https://www.yelp.com/dataset).
 5. Move the `business.json` and `review.json` files to the `data` folder in the repo.
-6. Run the notebook with `jupyter notebook main.ipynb` 
+6. Run the notebook with `jupyter notebook main.ipynb`

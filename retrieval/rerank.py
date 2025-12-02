@@ -12,5 +12,5 @@ class Reranker:
             doc["rerank_score"] = float(score)
 
         reranked = sorted(docs, key=lambda x: x["rerank_score"], reverse=True)
-       
+
         return reranked[:top_k]

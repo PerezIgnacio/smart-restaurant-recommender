@@ -4,11 +4,11 @@ from .states import RestaurantRecommendationState
 class RecommendationAgent(BaseAgent):
     SYSTEM_PROMPT = """
     You are the Recommendation Agent.
-    
+
     Your job:
     Given (1) the user query, (2) inferred user preferences, and (3) a list of candidate restaurants,
     recommend up to 3 restaurants that best match what the user is looking for.
-    
+
     STRICT RULES:
     1. You MUST use the inferred preferences (cuisines + locations) when scoring and ranking options.
     2. You MUST NOT reveal or explicitly mention the inferred preferences.
@@ -61,7 +61,7 @@ class RecommendationAgent(BaseAgent):
         response = self.llm(messages)
 
         return {"recommendations": response}
-    
+
     def rag(self, query):
         query_embedding = self.embedder.encode_query(query)
 
@@ -74,4 +74,4 @@ class RecommendationAgent(BaseAgent):
         search_result = "\n".join([doc["text"] for doc in stage2])
 
         return search_result
-        
+

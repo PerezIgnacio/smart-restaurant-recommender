@@ -19,7 +19,7 @@ class DocumentEmbedder:
             normalize_embeddings=True  # cosine similarity embeddings
         )
         return embeddings
-    
+
     def encode_query(self, query: str):
         return self.model.encode(
             [query],

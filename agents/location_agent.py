@@ -6,12 +6,12 @@ from .states import RestaurantRecommendationState
 class LocationAgent(BaseAgent):
     SYSTEM_PROMPT = """
     You are the Location Agent.
-    
+
     Your job is to extract real U.S. cities + states explicitly or implicitly mentioned in the user query.
-    
+
     Return ONLY cities in the format:
     { "locations": ["City, ST"] }
-    
+
     STRICT RULES:
     1. A valid location MUST be a real U.S. city.
        - If it's not a real city, DO NOT guess.
@@ -23,7 +23,7 @@ class LocationAgent(BaseAgent):
        - Chicago → Chicago, IL
     5. If multiple real cities appear, return all.
     6. Output ONLY valid JSON. No explanations.
-    
+
     Example valid output:
     { "locations": ["Chicago, IL", "Nashville, TN"] }
     """
@@ -41,4 +41,3 @@ class LocationAgent(BaseAgent):
         data = json.loads(raw)
 
         return {"locations": data["locations"]}
-    
